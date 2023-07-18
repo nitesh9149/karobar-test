@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+$green: #3ab98d;
+$red:#E54F6D;
+section.section.is-title-bar {
+  padding: 2rem 1.5rem;
+  border-bottom: $light-border;
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 $default-padding * .5 0 0;
+      font-size: $default-padding;
+      color: $title-bar-color;
+
+      &:after {
+        display: inline-block;
+        content: '-';
+        padding-left: $default-padding * .5;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        font-family: 'Montserrat', sans-serif;
+        color: #333A4D;
+        font-weight: 500;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+  .button{
+    .button-title{
+      font-size: 16px;
+    }
+  }
+    border-bottom: 0 !important;
+  .title-bar-dropdown {
+    .dropdown-menu {
+      .dropdown-content {
+        width: 10rem;
+      }
+    }
+  }
+  .button.is-primary {
+    background-color: $green;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  .button.is-secondary {
+    color: white;
+    background-color: #2482ff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  .button.is-danger {
+    background-color: $red;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  .button.is-light {
+    border-color: $green;
+    color: $green;
+    background-color:transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+section.section.is-subtitle-bar{
+    padding: 10px $default-padding;
+  border-bottom: $light-border;
+  background-color: rgba(216,241,232,0.54902);
+
+  ul {
+    li {
+      display: inline-block;
+      padding: 0 5px 0 0;
+      font-size: 16px;
+      color: #3AB98D;
+      &:after {
+        display: inline-block;
+        content: '-';
+        padding-left: 8px;
+      }
+
+      &:last-child {
+        padding-right: 0;
+        font-weight: 900;
+        color: #3ab98d;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

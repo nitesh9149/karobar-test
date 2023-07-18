@@ -1,0 +1,21 @@
+  .carousel-indicator.is-inside {
+    position: absolute;
+    left: 0;
+  }
+  .hero.is-medium .hero-body {
+  padding:0rem;
+}
+  .carousel-indicator .indicator-item .indicator-style {
+    border: 1px solid #34a77f;
+  }
+    .carousel-indicator .indicator-item.is-active .indicator-style,
+  .carousel .carousel-indicator .indicator-item .indicator-style:hover {
+    background: #34a77f;
+  }
+  .carousel .carousel-indicator .indicator-item.is-active .indicator-style, .carousel .carousel-indicator .indicator-item .indicator-style:hover {
+    background: #34a77f;
+    border: 1px solid white;
+}
+  .has-text-primary{
+  color: #dbdbdb !important;
+}

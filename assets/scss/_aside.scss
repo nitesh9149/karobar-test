@@ -1,0 +1,254 @@
+@include desktop {
+  html {
+    &.has-aside-left {
+      &.has-aside-expanded {
+        nav.navbar,
+        body {
+          padding-left: 15rem;
+        }
+        aside.is-placed-left {
+          left: 0;
+        }
+      }
+      nav.navbar,
+      body {
+        @include transition(padding-left);
+      }
+      aside.is-placed-left {
+        display: block;
+        left: -15rem;
+      }
+    }
+    &.has-aside-left-none{
+      display: none !important;
+    }
+  }
+  aside.aside.is-expanded {
+    width: 15rem;
+
+    .menu-list {
+      @include icon-with-update-mark($aside-icon-width);
+
+      span.menu-item-label {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      li.is-active {
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+  #app,
+  nav.navbar {
+    @include transition(margin-left);
+  }
+  aside.aside {
+    @include transition(left);
+  }
+  html.has-aside-transition {
+    body {
+      overflow-x: hidden;
+    }
+    body,
+    #app,
+    nav.navbar {
+      width: 100vw;
+    }
+    aside.aside {
+      width: $aside-mobile-width;
+      display: block;
+      left: $aside-mobile-width * -1;
+      height: auto;
+      padding-bottom: 2rem;
+
+      .image {
+        img {
+          max-width: $aside-mobile-width * 0.33;
+        }
+      }
+
+      .menu-list {
+        li.is-active {
+          ul {
+            display: block;
+          }
+        }
+        a {
+          @include icon-with-update-mark($aside-icon-width);
+
+          span.menu-item-label {
+            display: inline-block;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+$green: #34a77f;
+
+aside.aside {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 40;
+  padding: 0;
+  box-shadow: $aside-box-shadow;
+  background: $green;
+  border-right: 1px solid #e6e6e6;
+  padding: 0 0 1rem 8px;
+
+  .aside-tools {
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    background-color: $green;
+    color: #fff;
+    line-height: 1.6;
+    // height: 9.3rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    flex: 1;
+
+    .icon {
+      margin-right: $default-padding * 0.5;
+    }
+  }
+  .menu {
+    margin-top: 1.2rem;
+  }
+
+  .menu-list {
+    &:last-child {
+      border-bottom: 0;
+    }
+    li {
+      a {
+        .icon {
+          color: rgba(255, 255, 255, 0.9);
+        }
+        &.has-dropdown-icon {
+          position: relative;
+          padding-right: $aside-icon-width;
+
+          .dropdown-icon {
+            position: absolute;
+            top: $size-base * 0.5;
+            right: 0;
+          }
+        }
+      }
+      ul {
+        // display: none;
+        border-left: 0;
+        background-color: $green;
+        margin: 0 0 0.75rem 0.75rem;
+
+        li {
+          a {
+            padding: $default-padding * 0.5 0 $default-padding * 0.5 $default-padding * 0.5;
+            font-size: $aside-submenu-font-size;
+            color: rgba(255, 255, 255, 0.8);
+            .icon {
+              color: rgba(255, 255, 255, 0.9);
+            }
+
+            &.has-icon {
+              padding-left: 0;
+            }
+            &.is-active {
+              &:not(:hover) {
+                background: $green;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-label {
+    padding: 0 1rem;
+    margin-top: $default-padding * 0.5;
+    margin-bottom: $default-padding * 0.5;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+@include touch {
+  #app,
+  nav.navbar {
+    @include transition(margin-left);
+  }
+  aside.aside {
+    @include transition(left);
+  }
+  html.has-aside-mobile-transition {
+    body {
+      overflow-x: hidden;
+    }
+    body,
+    #app,
+    nav.navbar {
+      width: 100vw;
+    }
+    aside.aside {
+      width: $aside-mobile-width;
+      display: block;
+      left: $aside-mobile-width * -1;
+      height: auto;
+      padding-bottom: 2rem;
+
+      .image {
+        img {
+          max-width: $aside-mobile-width * 0.33;
+        }
+      }
+
+      .menu-list {
+        li.is-active {
+          ul {
+            display: block;
+          }
+        }
+        a {
+          @include icon-with-update-mark($aside-icon-width);
+
+          span.menu-item-label {
+            display: inline-block;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  html.has-aside-mobile-expanded {
+    #app,
+    nav.navbar {
+      margin-left: $aside-mobile-width;
+    }
+    aside.aside {
+      left: 0;
+    }
+  }
+}
+@media screen and (max-width: 1023px) {
+  html.has-aside-mobile-transition aside.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

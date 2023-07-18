@@ -1,0 +1,118 @@
+$green: #34a77f;
+.card:not(:last-child) {
+  margin-bottom: $default-padding;
+}
+
+.card {
+  border-radius: $radius-large;
+  border: none;
+  .card-header-title.search-btn {
+    margin-bottom: 0;
+    .input {
+      max-width: 25rem;
+    }
+    .control.has-icons-left .icon.is-left {
+      left: -8px;
+      top: -8px;
+      font-size: 23px;
+    }
+  }
+  &.has-table {
+    .card-content {
+      padding: 0;
+    }
+    .b-table {
+      border-radius: $radius-large;
+      overflow: hidden;
+    }
+  }
+
+  &.is-card-widget {
+    .card-content {
+      padding: $default-padding * 0.5;
+    }
+  }
+
+  .card-header {
+    padding: 5px 0;
+    .card-header-title {
+      font-weight: 600;
+      font-size: 17px;
+      color: #1b2121;
+      span.amountRs {
+        padding-left: 5px;
+      }
+    }
+    .dropdown-content {
+      width: max-content;
+    }
+    .button {
+      box-shadow: none;
+      margin: 0.75rem 0;
+      padding-top: 1.15em;
+      padding-bottom: 1.15em;
+      &:focus {
+        box-shadow: none;
+      }
+      span {
+        font-size: 14px;
+      }
+      &:last-child {
+        margin-right: 0.75rem;
+      }
+    }
+    .buttons:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-content {
+    hr {
+      margin-left: $card-content-padding * -1;
+      margin-right: $card-content-padding * -1;
+    }
+  }
+
+  .is-widget-icon {
+    .icon {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  .is-widget-label {
+    .subtitle {
+      color: $grey;
+    }
+  }
+}
+a.dropdown-item.is-active,
+.dropdown .dropdown-menu .has-link a.is-active,
+button.dropdown-item.is-active {
+  background-color: #34a77f;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  .card .card-header {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .button {
+      &:first-child {
+        margin-left: 1rem;
+      }
+    }
+    .input {
+      width: 100%;
+    }
+  }
+  .card-header .button {
+    margin: 0.75rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .card-header {
+    .buttons {
+      justify-content: flex-end;
+    }
+  }
+}
