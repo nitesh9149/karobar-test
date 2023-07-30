@@ -25,7 +25,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'static',
-  ssr: false,
+  ssr: true,
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -111,9 +111,15 @@ export default {
     ['nuxt-buefy', { materialDesignIcons: false }],
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/sentry',
     '@nuxtjs/pwa',
     '@nuxtjs/auth'
   ],
+  sentry: {
+    dsn: 'https://5718e2c2657e413aaaa5ed8265627be0@o4505561130139648.ingest.sentry.io/4505561143312384',
+    config: {
+    },
+  },
   pwa: {
 
     manifest: {
